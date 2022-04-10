@@ -11,6 +11,7 @@ import inboundRestIntegrations from "./inbound-rest-integrations.md";
 import scriptedRestApis from "./scripted-rest-apis.md";
 import understandingColorSchemes from "./understanding-color-schemes.md";
 import whatIsDesign from "./what-is-design.md";
+import howIDeployMyProjectsIn2022 from "./how-i-deploy-my-projects-in-2022.md";
 
 const posts = [];
 
@@ -65,11 +66,15 @@ posts.unshift({
   data: understandingColorSchemes,
   tag: "Design"
 });
-
 posts.unshift({
   date: "Apr 9, 2022",
   data: whatIsDesign,
   tag: "Design"
+});
+posts.unshift({
+  date: "Apr 10, 2022",
+  data: howIDeployMyProjectsIn2022,
+  tag: "Software"
 });
 
 export default posts;
