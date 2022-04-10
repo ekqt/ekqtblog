@@ -52,6 +52,6 @@ The easiest way to use Git is to think of your `main` branch as production. Ever
 
 ## Conclusion
 
-So to sum it all up, this is how I deploy in 2022. I use (1) CodeSandBox as my code editor, (2) then commit my projects to GitHub, (3) where they are then pushing deployments in Vercel to share on the web. All managed from a single place maintaining accessibility, easy of deployment and an integrated version control system.
+So to sum it all up, this is how I deploy in 2022. I use (1) CodeSandBox as my code editor, (2) then commit my projects to GitHub, (3) where they are then pushing deployments in Vercel to share on the web. All managed from a single place maintaining accessibility, ease of deployment and an integrated version control system.
 
 Thanks for reading.
