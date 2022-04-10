@@ -2,6 +2,8 @@
 
 The more I develop, the more I realize that it is critical to have a nice, easy and sustainable workflow that can enable you to develop projects, whether that is websites, applications or [POCs](https://en.wikipedia.org/wiki/Proof_of_concept) effectively and for free.
 
+![Photo by Roman Synkevych 🇺🇦 on Unsplash](https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1488&q=80)
+
 ## Workflow Criteria
 
 Things that I was looking for when I set myself to explore my current workflow:
