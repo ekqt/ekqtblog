@@ -58,4 +58,6 @@ Copying a product is not design. So design is making a plan to create somethjing
 
 > "A design is a plan to make something new for people, that they perceive as beneficial."
 
-Design makes products successful because going straight to engineering would almost certainly increase costs. Fixing a mistake in engineering costs about 10 times the amount of fixing a mistake in design. Fixing a mistake in in production costs about 100 times that.
+Design makes products successful because going straight to engineering would almost certainly increase costs.
+
+Fixing a mistake in engineering costs about 10 times the amount of fixing a mistake in design. Fixing a mistake in in production costs about 100 times that.
