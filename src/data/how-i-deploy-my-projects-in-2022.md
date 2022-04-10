@@ -12,7 +12,7 @@ Things that I was looking for when I set myself to explore my current workflow:
 
 To explain this criteria, I'll use as an example my latest project: [@ekqtblog](https://ekqt-blog.vercel.app/#) - a markdown-based application created with [React](https://reactjs.org/). Skip the next three sections if you're short on time.
 
-### Accesibility
+### Accessibility
 
 For this project, I am more often writing new content (as blog posts) rather than pushing new features or updates in the codebase itself. Even if it were the other way around, I wanted to have full accessibility to my project. Meaning that regardless of where I am, or from which computer I am working on, I wanted to be able to jump in and write something and have it saved in my project files without having to download anything at all.
 
@@ -32,7 +32,7 @@ For the sake of keeping it short, working with your projects in GitHub will just
 
 > "CodeSandBox is here to make web development faster. By removing complexity, they enable web developers to be more productive."
 
-[CodeSandbox](https://codesandbox.io/docs/) is an online editor for rapid web development for full-stack web applications where you can prototype quickly, experiement easily and share creations with a click.
+[CodeSandbox](https://codesandbox.io/docs/) is an online editor for rapid web development for full-stack web applications where you can prototype quickly, experiment easily and share creations with a click.
 
 > "At the heart of GitHub is an open source version control system (VCS) called Git. "
 
@@ -40,7 +40,7 @@ With a [single click](https://codesandbox.io/docs/git) you are able to commit to
 
 > "Vercel is a platform for **frontend frameworks** that provides a frictionless developer experience taking care of the hard things like: deploying instantly, scaling automatically, and serving personalized content around the globe."
 
-Vercel has a sustaintable [Git integration](https://vercel.com/docs/concepts/git) that allows for **automatic deployments on every commit** and merges onto the [Production Branch](https://vercel.com/docs/concepts/git#:~:text=merges%20onto%20the-,Production%20Branch,-of%20your%20GitHub) of your GitHub repository.
+Vercel has a sustainable [Git integration](https://vercel.com/docs/concepts/git) that allows for **automatic deployments on every commit** and merges onto the [Production Branch](https://vercel.com/docs/concepts/git#:~:text=merges%20onto%20the-,Production%20Branch,-of%20your%20GitHub) of your GitHub repository.
 
 The easiest way to use Git is to think of your `main` branch as production. Every time a commit is made to that branch, Vercel will create a **unique deployment**. Not to mention that Vercel's projects also support several other features like:
 
