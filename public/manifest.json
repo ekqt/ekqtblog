@@ -1,0 +1,27 @@
+{
+  "short_name": "@ekqt",
+  "name": "@ekqt: Blog",
+  "icons": [
+    {
+      "src": "/images/icons-vector.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/images/icons-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/icons-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/#",
+  "background_color": "#21262C",
+  "display": "fullscreen",
+  "scope": "/",
+  "theme_color": "#21262C",
+  "description": "Welcome to my repository of all things Software, Design, Technology and more!"
+}
