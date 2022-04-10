@@ -1,7 +1,7 @@
 {
-  "name": "ekqtblog",
+  "name": "ekqtblogcsb",
   "version": "1.0.0",
-  "description": "",
+  "description": "Welcome to my repository of all things Software, Design, Technology and more!",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
