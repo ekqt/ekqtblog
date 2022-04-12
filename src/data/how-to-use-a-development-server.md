@@ -13,9 +13,9 @@ This is NOT a basic tutorial where we will install random dependencies you've ne
 
 ## 1. Setting up your project
 
-Once you've install both, we should be ready to start. For this guide, we'll create a regular Vanilla.js project (only using HTML, CSS and JavaScript). Go ahead launch VS Code and open a terminal window by navigating to **View > Terminal.**
+Once you've installed both, we should be ready to start. For this guide, we'll create a regular Vanilla.js project (only using HTML, CSS and JavaScript). Go ahead, launch VS Code and open a terminal window by navigating to **View > Terminal.**
 
-Once the terminal opens, type the following commands replacing the placeholders with your own:
+Once the terminal opens, type the following commands, replacing the placeholders with your own:
 
 ```javascript
 ## By default, Terminal will open in your user directory:
@@ -74,7 +74,7 @@ vite v2.7.1 dev server running at:
 ## We will get back to the message: '> Network: use `--host` to expose'
 ```
 
-Open the project's folder `cmd + O` or by navigating to **File > Open Folder...** You directory should look as follows:
+Open the project's folder `cmd + O` or by navigating to **File > Open Folder...** Your directory should look as follows:
 
 ```bash
 ├── node_modules ## Where all of your local NPM packages live.
@@ -90,12 +90,12 @@ Open the project's folder `cmd + O` or by navigating to **File > Open Folder...*
 ## 2. Cleaning your directory
 
 1. You can safely delete the `favicon.svg` file and also remove the line 5 from your `index.html` file which links the icon.
-2. From your `index.html` file you can change your project's title from `<title>Vite App</title>` to a name of your choosing `<title>Test App</title>`.
-3. From your `main.js` file delete the entire `document.querySelector` (lines 3 to 6) which is feeding the inner HTML into the html file.
+2. From your `index.html` file, you can change your project's title from `<title>Vite App</title>` to a name of your choosing `<title>Test App</title>`.
+3. From your `main.js` file, delete the entire `document.querySelector` (lines 3 to 6) which is feeding the inner HTML into the HTML file.
 
 ## 3. Start working on your project
 
-If everything went well, go ahead and write something in your html file, hit save, open a browser window and go to [http://localhost:3000/](http://localhost:3000/). You should be greeted with the following:
+If everything went well, go ahead and write something in your HTML file, hit save, open a browser window and go to [http://localhost:3000/](http://localhost:3000/). You should be greeted with the following:
 
 ![Result](https://miro.medium.com/max/562/1*3MJHi0ikI-E3_f3141xAKw.png)
 

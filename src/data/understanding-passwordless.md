@@ -1,14 +1,14 @@
 # Understanding Passwordless
 
-Passwordless authentication enables a secure, seamless customer experience. It addressess the urgent priority for a secure and frictionless authentication as customer experieces move online.
+Passwordless authentication enables a secure, seamless customer experience. It addresses the urgent priority for a secure and frictionless authentication as customer experiences move online.
 
 > "As it names suggests, passwordless authentication involves verifying a user's identity with something other than a password. This might be a push notification sent to a secondary device or a unique biometric like the user's face or fingerprint." —[Auth0](https://auth0.com/docs/authenticate/passwordless)
 
 The biggest and most compelling reasons for going passwordless are:
 
 - **Effortless authentication**: Users don't need to remember anything to get what they want/need, it just provides an easier and frictionless experience.
-- **Reduced costs**: Companies save money by avoiding password management (i.e. User needs help resetting their password). On average a password reset costs \$70.
-- **Higher revenue**: Easier experiences equates to customer loyalty, satisfaction, higher conversation rates, and ultimately more revenue. It can improve conversation rates by [more than 50%](https://www.cio.com/article/3193206/ditching-passwords-and-increasing-ecommerce-conversion-rates-by-54.html).
+- **Reduced costs**: Companies save money by avoiding password management (i.e. User needs help resetting their password). On average, a password reset costs \$70.
+- **Higher revenue**: Easier experiences equates to customer loyalty, satisfaction, higher conversion rates, and ultimately more revenue. It can improve conversion rates by [more than 50%](https://www.cio.com/article/3193206/ditching-passwords-and-increasing-ecommerce-conversion-rates-by-54.html).
 
 ## How to set Passwordless with a React Application
 

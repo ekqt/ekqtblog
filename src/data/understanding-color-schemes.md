@@ -13,7 +13,7 @@ We can set the brand color delivered by hex or rgb. However, Google defines this
 }
 ```
 
-In order to enable a concept of darkening or lightening the brand color, the 3 channels of the hsl color (hue, saturation and lightness) need to be extracted intot their own custom properties.
+In order to enable a concept of darkening or lightening the brand color, the 3 channels of the hsl color (hue, saturation and lightness) need to be extracted into their own custom properties.
 
 ```css
 * {
@@ -23,11 +23,11 @@ In order to enable a concept of darkening or lightening the brand color, the 3 c
 }
 ```
 
-This is foundational to bulding a color scheme as CSS can keep all colors in the same hue family by adjusting the hsl saturation and lightness amounts WITHOUT changing the hue letting CSS handling the work, for example `calc(var(--brand-lightness) - 20%)`.
+This is foundational to building a color scheme as CSS can keep all colors in the same hue family by adjusting the hsl saturation and lightness amounts WITHOUT changing the hue letting CSS handling the work, for example `calc(var(--brand-lightness) - 20%)`.
 
 ## Light Theme
 
-Each color variant will be marked with its matching scheme (for light it will be appended with `-light`).
+Each color variant will be marked with its matching scheme (for light, it will be appended with `-light`).
 
 ### Brand
 
@@ -43,7 +43,7 @@ Starting with the brand color, it's rebuilt by wrapping `--brand-hue`, `--brand-
 
 ### Text colors
 
-In a light theme, text colors should be very dark. Notice how the lightness of the colloring colors is low, well under 50%.
+In a light theme, text colors should be very dark. Notice how the lightness of the colors is low, well under 50%.
 
 ```css
 * {
@@ -52,15 +52,15 @@ In a light theme, text colors should be very dark. Notice how the lightness of t
 }
 ```
 
-`--text1-light`, since it's very dark at 10% lightness, keeps the heavy 100% saturation so the brand color can still peek through into the dark dark navy.
+`--text1-light`, since it's very dark at 10% lightness, keeps the heavy 100% saturation, so the brand color can still peek through into the dark navy.
 
 `--text2-light`, it's not quite as dark as the 1st color, which is good as it's a secondary color, and it's also much less saturated.
 
 ### Surface colors
 
-Suface colors are the backgrounds, borders and other decorative surfaces that text sits upon or within. In a light theme, these are the light colors, as opposed to the text colors which were dark.
+Surface colors are the backgrounds, borders and other decorative surfaces that text sits upon or within. In a light theme, these are the light colors, as opposed to the text colors which were dark.
 
-To create light colors with hsl, we'll use higher percentage vvalues in the third lightness value.
+To create light colors with hsl, we'll use higher percentage values in the third lightness value.
 
 ```css
 * {
@@ -96,7 +96,7 @@ No need to hunt around to find how any of the light colors are made, they are al
 Two things to keep in mind with dark themes:
 
 1. Users will generally be in the dark while using this theme, so test in the dark.
-2. Colors should desaturate as to not vibrate on the screne due to being over-intense.
+2. Colors should desaturate as to not vibrate on the screen due to being over-intense.
 
 ### Brand
 
@@ -156,7 +156,7 @@ In a dark theme, the surface colors should be dark. The following colors have a 
 
 ## Accessible colors
 
-Between the lowest lightness in the dark text color and the highest lightness in the dark surface there should be enough breathing room between them. In the light theme, there's 55% breathing room. Keeping lightness differences between text and surface colors at around 40-50% can help keep color contrast ratios high, while also being a subtle level to adjust in case scores are poor.
+Between the lowest lightness in the dark text color and the highest lightness in the dark surface, there should be enough breathing room between them. In the light theme, there's 55% breathing room. Keeping lightness differences between text and surface colors at around 40-50% can help keep color contrast ratios high, while also being a subtle level to adjust in case scores are poor.
 
 To help others on the team use good contrasting colors, it's a good idea to create a classname that pairs a surface color with an accessible text color.
 
@@ -188,7 +188,7 @@ With the predefining of colors complete, it's time to turn them into scheme agno
 
 Instead of `color: var(--text1-light)` use `color: var(--text1)`. All adapting and pivoting of colors is done much higher level in the CSS.
 
-Diving in, the light theme's connective styles in the following code block, connect a generic custom property with the light theme specific color. Now all uses of `var(--brand)` will use the light brand color.
+Diving in, the light theme's connective styles in the following code block, connect a generic custom property with the light theme specific color. Now, all uses of `var(--brand)` will use the light brand color.
 
 ### Light theme (auto)
 
@@ -255,4 +255,4 @@ Diving in, the light theme's connective styles in the following code block, conn
 }
 ```
 
-For more information and demos about this article visit [Building a color scheme](https://web.dev/building-a-color-scheme/#using-of-the-color-schemes) by Google's web.dev.
+For more information and demos about this article, visit [building a color scheme](https://web.dev/building-a-color-scheme/#using-of-the-color-schemes) by Google's web.dev.

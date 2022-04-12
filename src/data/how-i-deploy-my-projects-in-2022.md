@@ -12,7 +12,7 @@ Things that I was looking for when I set myself to explore my current workflow:
 2. **Ease of deployment** — being able to commit and deploy frictionlessly
 3. **Integrated version control system** — being able to sustainably keep my codebase in GitHub
 
-To explain this criteria, I'll use as an example my latest project: [@ekqtblog](https://ekqt-blog.vercel.app/#) - a markdown-based application created with [React](https://reactjs.org/). Skip the next three sections if you're short on time.
+To explain these criteria, I'll use as an example my latest project: [@ekqtblog](https://ekqt-blog.vercel.app/#) - a markdown-based application created with [React](https://reactjs.org/). Skip the next three sections if you're short on time.
 
 ### Accessibility
 
@@ -22,13 +22,13 @@ So no keeping and having to move around any local files, or having to download a
 
 ### Ease of deployment
 
-Similarly, I wanted my project live to be able to share it with others. Ultimately for this particular project (a blog application), being able to share content with others is paramount to its purpose of being. Therefore, a deployment solution that would work easily with an accesible codebase is the way to go. Without having to use any [CLI](https://en.wikipedia.org/wiki/Command-line_interface) commands or Deploy Hooks (see [Webhooks](https://en.wikipedia.org/wiki/Webhook)).
+Similarly, I wanted my project live to be able to share it with others. Ultimately, for this particular project (a blog application), being able to share content with others is paramount to its purpose of being. Therefore, a deployment solution that would work easily with an accessible codebase is the way to go. Without having to use any [CLI](https://en.wikipedia.org/wiki/Command-line_interface) commands or Deploy Hooks (see [Webhooks](https://en.wikipedia.org/wiki/Webhook)).
 
 ### Integrated version control system
 
-Why is version control important? From a [DevOps](https://www.atlassian.com/devops/what-is-devops)' perspective it (a) Improves visibility, (b) Helps collaboration, and (c) Accelerates product delivery. More on that [here](https://www.atlassian.com/git/tutorials/what-is-version-control#benefits-of-version-control).
+Why is version control important? From a [DevOps](https://www.atlassian.com/devops/what-is-devops)' perspective, it (a) Improves visibility, (b) Helps collaboration, and (c) Accelerates product delivery. More on that [here](https://www.atlassian.com/git/tutorials/what-is-version-control#benefits-of-version-control).
 
-For the sake of keeping it short, working with your projects in GitHub will just make your life easier on the long run.
+For the sake of keeping it short, working with your projects in GitHub will just make your life easier in the long run.
 
 ## Workflow: CodeSandBox - Github - Vercel
 
@@ -38,7 +38,7 @@ For the sake of keeping it short, working with your projects in GitHub will just
 
 > "At the heart of GitHub is an open source version control system (VCS) called Git. "
 
-With a [single click](https://codesandbox.io/docs/git) you are able to commit to GitHub repositories. CodeSandBox has a nice integration with GitHub where you can review changes and commit them all from the same workspace.
+With a [single click](https://codesandbox.io/docs/git), you are able to commit to GitHub repositories. CodeSandBox has a nice integration with GitHub where you can review changes and commit them all from the same workspace.
 
 > "Vercel is a platform for **frontend frameworks** that provides a frictionless developer experience taking care of the hard things like: deploying instantly, scaling automatically, and serving personalized content around the globe."
 

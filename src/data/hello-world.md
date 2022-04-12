@@ -17,7 +17,7 @@ Haven't worked on a project like this, I thought the idea was cool enough for me
 The project's file structure looks like this (at least for the files that matter):
 
 ```javascript
-/** Sidenote: tes it also supports code blocks! Isn't it great?*/
+/** Sidenote: it also supports code blocks! Isn't it great?*/
 ├── components
 │   └── Posts.js
 ├── data
@@ -30,7 +30,7 @@ The project's file structure looks like this (at least for the files that matter
 
 ## So what's happening behind the scenes?
 
-1. Each blog is created and uploaded with `.md` files into the `/data` directory and also listed for use in the `data.js` JavaScript data processor. This 'data processor' creates an array with all of the information required.
+1. Each blog is created and uploaded with `.md` files into the `/data` directory and also listed for use in the `data.js` JavaScript data processor. This 'data processor' creates an array with all the information required.
 2. That data array is used by a React component `Posts.js`, where each post is immediately converted to an object using [Marked](https://marked.js.org/) (a low-level markdown compiler for parsing markdown).
 3. These objects contain content blocks that are styled with a component factory called `componentGenerator.js` which analyzes and maps each content block to a defined React component using [Mantine](https://mantine.dev/) (A fully featured React component library).
 4. Then it all gets rendered on the page, where navigation happens just using React's `useState()` and the browser's `window.location.hash`. The burger menu displays items for (a) all Posts, (b) different tags, and (c) an About page which directs users to this post.

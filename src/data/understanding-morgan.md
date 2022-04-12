@@ -31,7 +31,7 @@ const app = express()
 
 **Morgan(format, options)**
 
-Then you can create a new morgan logger middleware function using whatever `format` and `options` you want to set. The `format` argument may be a:
+Then you can create a new Morgan logger middleware function using whatever `format` and `options` you want to set. The `format` argument may be a:
 
 - String of a predefined name (like 'tiny'), a
 - String of a format string (predefined tokens), or a
@@ -64,7 +64,7 @@ app.use(
 //This would be: method, url, status, content-length and response time.
 ```
 
-Notice how using predefined format strings can render the same results as using predefined tokens. So definitely check out their options. You can both explore all their predefined format strings and predefined tokens on [Morgan's](https://github.com/expressjs/morgan) github site or on the Express' article for [Morgan middleware](http://expressjs.com/en/resources/middleware/morgan.html).
+Notice how using predefined format strings can render the same results as using predefined tokens. So definitely check out their options. You can both explore all their predefined format strings and predefined tokens on [Morgan's](https://github.com/expressjs/morgan) GitHub site or on the Express' article for [Morgan middleware](http://expressjs.com/en/resources/middleware/morgan.html).
 
 A note on using predefined tokens: you always need to declare them as strings with a colon before the token's name `:method`.
 
@@ -89,7 +89,7 @@ app.use(
 
 ## Tokens
 
-If you want to customise your own middleware functions you will have to create your own tokens. To define a token, simply invoke `morgan.token()` with the name and a callback function. This callback function is expected to return a string value. The value returned is then available as `:tokenName`, for the example shown, we are creating a token called `:body` to log the request's body in JSON format.
+If you want to customize your own middleware functions, you will have to create your own tokens. To define a token, simply invoke `morgan.token()` with the name and a callback function. This callback function is expected to return a string value. The value returned is then available as `:tokenName`, for the example shown, we are creating a token called `:body` to log the request's body in JSON format.
 
 ```javascript
 morgan.token("body", function (req, res) {
@@ -109,6 +109,6 @@ app.use(
 //This would be: method, rrl, status, content-length, response time and content
 ```
 
-Middlewares, regardless if they are set with Morgan or not are the backbone of any Express application. You can choose to integrate application-level, router-level, error-handling, built-in or third-party middleware to your apps building a series of functions together, creating a middleware system for all of your needs.
+Middlewares, regardless if they are set with Morgan or not, are the backbone of any Express application. You can choose to integrate application-level, router-level, error-handling, built-in or third-party middleware to your apps building a series of functions together, creating a middleware system for all of your needs.
 
 Thank you for reading!

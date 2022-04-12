@@ -4,7 +4,7 @@ You cannot completely neglect one essential area of _software development_: auto
 
 ## Installing Jest
 
-Jest works well for testing backends and it shines when it comes to testing _React applications_. Since tests are only executed during development, we will dive in and understand Jest from scratch by (1) creating a new directory, (2) running an npm project and (3) installing _Jest_ as a development dependency with the command:
+Jest works well for testing backends, and it shines when it comes to testing _React applications_. Since tests are only executed during development, we will dive in and understand Jest from scratch by (1) creating a new directory, (2) running an npm project and (3) installing _Jest_ as a development dependency with the command:
 
 ```javascript
 $ mkdir understandingJest
@@ -36,11 +36,11 @@ The `jest` [command line runner](https://jestjs.io/docs/cli) has a number of use
 }
 ```
 
-`--verbose` displays individual test results with the test suite hierarchy (more on that later with describe blocks) and `--runInBand` runs all tests serially in the current process, rather than creating a worker pool of child processes than run tests, which can be useful for debugging.
+`--verbose` displays individual test results with the test suite hierarchy (more on that later with describe blocks) and `--runInBand` runs all tests serially in the current process, rather than creating a worker pool of child processes that run tests, which can be useful for debugging.
 
 ## Directory Structure for Testing
 
-To adhere to Node.js best practices, create two folders named: (1) _test_ and (2) _utils_. Inside test create a _understandingJest.test.js_ file and inside utils create a _helper_functions.js_ file. Last but not least, at the root directory let's create a _db.json_ file.
+To adhere to Node.js best practices, create two folders named: (1) _test_ and (2) _utils_. Inside test create a _understandingJest.test.js_ file and inside utils create a _helper_functions.js_ file. Last but not least, at the root directory, let's create a _db.json_ file.
 
 Your project should have the following directory structure:
 
@@ -87,7 +87,7 @@ module.exports = {
 };
 ```
 
-In our _db.json_ file we are going to mock a JSON database for laptops. To keep things SS, we will only have a single item as follows:
+In our _db.json_ file, we are going to mock a JSON database for laptops. To keep things SS, we will only have a single item as follows:
 
 ```javascript
 {
@@ -116,7 +116,7 @@ In our _db.json_ file we are going to mock a JSON database for laptops. To keep 
 
 In Jest, individual test cases are defined with the `test` function. The first function parameter is the _test description_ as a string. The second parameter is the testing function, that defines the functionality for the test case.
 
-The test first executes the code to be tested, meaning that we run the testing functions and then it verifies the results with the [expect function](https://jestjs.io/docs/expect). The `expect` function gives you access to a number of 'matchers' that let you validate a ton of different things.
+The test first executes the code to be tested, meaning that we run the testing functions, and then it verifies the results with the [expect function](https://jestjs.io/docs/expect). The `expect` function gives you access to a number of 'matchers' that let you validate a ton of different things.
 
 For now, let's take a look at a single test using our _understandingJest.test.js_ file:
 
@@ -184,7 +184,7 @@ describe("What is the", () => {
 
 ## Running tests one by one
 
-The `npm test` command executes all of the tests of the application. When writing tests, it's usually best to execute only one or two tests at once. To run a single test (or describe block) we can specify the name of the test with the -t flag:
+The `npm test` command executes all the tests of the application. When writing tests, it's usually best to execute only one or two tests at once. To run a single test (or describe block) we can specify the name of the test with the -t flag:
 
 ```javascript
 $npm test -- -t 'name-of-spec'
@@ -228,7 +228,7 @@ describe("The latest Macbook Pro is", () => {
 });
 ```
 
-In the example above, we first start by getting the database from the _db.json_ file. Then we find the object we want to test by using the `Array.prototype.find()` method. Finally we use our selected object and run tests for find out if our computer is (1) very expensive, (2) if it doesn't have normal ports, and (3) if it was the four built-in apps we need.
+In the example above, we first start by getting the database from the _db.json_ file. Then we find the object we want to test by using the `Array.prototype.find()` method. Finally, we use our selected object and run tests to find out if our computer is (1) very expensive, (2) if it doesn't have normal ports, and (3) if it was the four built-in apps we need.
 
 Test results would look as follows:
 

@@ -12,6 +12,8 @@ import scriptedRestApis from "./scripted-rest-apis.md";
 import understandingColorSchemes from "./understanding-color-schemes.md";
 import whatIsDesign from "./what-is-design.md";
 import howIDeployMyProjectsIn2022 from "./how-i-deploy-my-projects-in-2022.md";
+import performancePitfallsDOMContentLoaded from "./performance-pitfalls-DOMContentLoaded.md";
+import introductionToApis from "./introduction-to-apis.md";
 
 const posts = [];
 
@@ -74,6 +76,16 @@ posts.unshift({
 posts.unshift({
   date: "Apr 10, 2022",
   data: howIDeployMyProjectsIn2022,
+  tag: "Software"
+});
+posts.unshift({
+  date: "Apr 10, 2022",
+  data: performancePitfallsDOMContentLoaded,
+  tag: "Software"
+});
+posts.unshift({
+  date: "Apr 12, 2022",
+  data: introductionToApis,
   tag: "Software"
 });
 

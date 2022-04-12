@@ -451,3 +451,172 @@ The response body contains the number of incidents, changes, and problems, as we
 - The _process_ function is self-invoking.
 - The _request_ and _response_ objects are automatically instantiated.
 - Access controls apply to Scripted REST APIs. The user making the request through the API's authentication must have access to the requested information.
+
+## Scripted REST API Error Objects
+
+To assist API users in debugging problems, use an error object to report information about the error to the API's consumers. ServiceNow has two strategies for errors:
+
+- Use a predefined _error_ object
+- Create a custom _error_ object
+
+In both cases, the _error_ object must be instantiated from the _sn_ws_err_ namespace.
+
+### Predefined Error Objects
+
+Predefined _error_ objects send information to the consumer using standard HTTP status codes. Pass an error message to send a custom message.
+
+- **BadRequestError (400)**: Error in the request, such as incorrect syntax.
+- **NotFoundError (404)**: Requested resource is not available.
+- **NotAcceptableError (406)**: The Accept header value is not allowed.
+- **ConflictError (409)**: There is a conflict in the request.
+- **UnsupportedMediaTypeError (415)**: The requested media type is not supported.
+
+For example, send a _NotFoundError_ object to the consumer:
+
+```javascript
+(function run(request, response) {
+  // Resource is not available
+  return new sn_ws_err.NotFoundError(
+    "The resource you requested is not part of the API."
+  );
+})(request, response);
+```
+
+**DEVELOPER TIP**: It is not required to send a message with the _error_ object, but users of your API will appreciate it if you do!
+
+The predefined error is returned in the response body.
+
+![Predefined error message](https://developer.servicenow.com/app_store_learnv2_rest_sandiego_scripted_images_scriptws_404error.png)
+
+### Custom Error Objects
+
+User the _ServiceError_ object to define custom errors. The _ServiceError_ methods are:
+
+- `setStatus(number)`: HTTP Status Code for the error (default: 500);
+- `setMessage(string)`: Short error message to send (default: '');
+- `setDetail(string)`: Detailed error message (default: '');
+
+```javascript
+(function run(request, response) {
+  var myError = new sn_ws_err.ServiceError();
+  myError.setStatus(442);
+  myError.setMessage("Invalid value in path parameter");
+  myError.setDetail(
+    "We recognized the path parameter you sent, but the value you requested does not exist in the database."
+  );
+  return myError;
+})(request, response);
+```
+
+The custom error is returned in the response body.
+
+![Custom error message](https://developer.servicenow.com/app_store_learnv2_rest_sandiego_scripted_images_scriptws_442error.png)
+
+## API Versions
+
+In the default case, API versioning is disabled. Enabling versioning allows developers to test and deploy changes without impacting existing integrations from web service consumers.
+
+### Enabling Versioning
+
+Versioning is enabled at the API level and is applied to all API Resources. To enable versioning, click the **Enable versioning** related link in the Scripted REST API.
+
+![Related Link for Enabling Versioning](https://developer.servicenow.com/app_store_learnv2_rest_sandiego_scripted_images_scriptws_enableversioninglink.png)
+
+When versioning is enabled, Resource URLs contain a version number. To prevent breaking existing integrations when enabling versioning, make version v1 the default.
+
+![Enable versioning with V1 as default](https://developer.servicenow.com/app_store_learnv2_rest_sandiego_scripted_images_scriptws_v1default.png)
+
+The _Resources_ list contains an _API version_ column and the version number is added to the _Resource path_.
+
+![Resources](https://developer.servicenow.com/app_store_learnv2_rest_sandiego_scripted_images_scriptws_versionon.png)
+
+**NOTE**: Once versioning is enabled, it cannot be disabled.
+
+### Creating a New Version
+
+To add a new version to an API, click the **Add new version** related link. The _Add new version_ dialog opens.
+
+![Add new version](https://developer.servicenow.com/app_store_learnv2_rest_sandiego_scripted_images_scriptws_addnewversiondialog.png)
+
+To make the new version the default, click the **Make this version the default check box**. In most cases, do not make a new version the default until development is complete and the new version is completely tested.
+
+To copy resources from an existing version, select a version in the _Copy existing resources from version_ choice list.
+
+When editing resources, select the version to edit.
+
+![Resources to edit](https://developer.servicenow.com/app_store_learnv2_rest_sandiego_scripted_images_scriptws_editcorrectversion.png)
+
+when testing in the REST API Explorer, set the _API Version_ to the version to test.
+
+![REST API Explorer](https://developer.servicenow.com/app_store_learnv2_rest_sandiego_scripted_images_scriptws_raeselectversion.png)
+
+**DEVELOPER TIP**: Document any changes between versions in custom Scripted REST APIs. Update the method definition and the full documentation access from the REST API Explorer menu.
+
+## API Analytics
+
+The _Usage by WEB API_ dashboard displays analytic data on a per API basis. Developers can view:
+
+- _API Usage by Resource (Last 30 days)_
+- _API Usage by Method (Daily)_
+- _REST API Usage by Version (Daily)_
+- _API Usage (Monthly)_
+
+To view the Dashborad for an API, use the _All_ menu to open **Performance Analytics > Dashborads**. Select **All**, then use the _Search dashboard_ field to look for **Usage by WEB API**. Open the Dashboard then select the desired API from the choice list or click the **API analytics** Related Link in the API record.
+
+Use the dashboard to monitor requests to the API.
+
+![API Analytics Dashboard](https://developer.servicenow.com/app_store_learnv2_rest_sandiego_scripted_images_scriptws_apidashboard.png)
+
+## Scripted REST APIs Module Recap
+
+Core concepts:
+
+- Scripted REST APIs allow developers to create APIs that allow other applications to exchange information with their app
+
+- Scripted REST APIs define:
+
+  - Query parameters
+  - API documentation
+  - Request headers
+  - Response and request types
+  - Resources
+
+- Resources are defined in a Scripted REST API and consist of:
+
+  - HTTP method (Relative path including path parameters)
+  - Resource path
+  - Security
+  - Allowed response format type
+  - Resource documentation
+  - Request header associations
+  - Query parameter associations
+  - Script
+
+- In resource scripts:
+  - The request and response objects are instantiated automatically
+  - The APIs for scripting resources are: RESTAPIRequest, RESTAPIRequestBody, RESTAPIResponse, and RESTAPIResponseStream
+  - The process function is self-invoking
+  - The body object can be populated to return data to the application using the resource
+  - Developers have access to the headers, query parameters, and path parameters
+
+* error objects help Scripted REST API consumers determine what went wrong
+
+  - All error objects are created in the sn_ws_err namespace
+  - error objects can be pre-defined or custom
+  - error objects are returned in the response body and include an HTTP status code
+
+* API versioning allows updating APIs without breaking existing integrations
+
+  - Set a default version
+  - Create documentation for each version of the API
+  - Once enabled, versioning cannot be disabled
+  - Version numbers are part of the resource path
+
+* The Usage by WEB API dashboard allows developers to view analytics for their APIs
+
+  - API Usage by Resource (Last 30 Days)
+  - API Usage by Method (Daily)
+  - REST API Usage by Version (Daily)
+  - API Usage (Monthly)
+
+* Use the REST API Explorer or a third party application (for example, Postman) to test Scripted REST APIs

@@ -4,9 +4,9 @@ The web servers and the browsers communicate with each other using the [Hypertex
 
 HTTP follows a classic [client-server model](https://en.wikipedia.org/wiki/Client%E2%80%93server_model), with a client opening a connection to make a request, then waiting until it receives a response. HTTP is a [stateless protocol](https://en.wikipedia.org/wiki/Stateless_protocol), meaning that the server does not keep any data (state) between requests.
 
-When you are developing web applications, understanding and being able to test the behaviour of HTTP requests is a task you cannot overlook.
+When you are developing web applications, understanding and being able to test the behavior of HTTP requests is a task you cannot overlook.
 
-## The API Developement Hill and the Underdog
+## The API Development Hill and the Underdog
 
 There are many tools out there for API development. Among them, [Postman](https://www.postman.com/) is perhaps the most popular and well-known. However, if you use Visual Studio Code, you should definitely try [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) instead of Postman. REST Client allows you to send HTTP requests and view their responses in Visual Studio Code directly.
 
@@ -70,11 +70,11 @@ content-type: application/json
 
 ### GET, POST, PUT & DELETE Using Variables
 
-REST Client supports **file variables** defined by the user to use througout the _.rest_ file. The definition syntax must be set as `@variableName = variableValue` which occupies a complete line. Keep in mind a variable **MUST NOT** contain any spaces. As for the variable value, it can contain any characters or whitespaces (leading and trailing whitespaces will be trimmed).
+REST Client supports **file variables** defined by the user to use throughout the _.rest_ file. The definition syntax must be set as `@variableName = variableValue` which occupies a complete line. Keep in mind, a variable **MUST NOT** contain any spaces. As for the variable value, it can contain any characters or white spaces (leading and trailing white spaces will be trimmed).
 
-File variables can be defined in a separate request block only filled with variable definitions, as well as define request variables before any request url, which needs an extra blank line between variable definitions and request url (I'd recommend the former more than the latter).
+File variables can be defined in a separate request block only filled with variable definitions, as well as define request variables before any request URL, which needs an extra blank line between variable definitions and request URL (I'd recommend the former more than the latter).
 
-Here an easy example of setting up a variable for the baseUrl used on a `DELETE` HTTP request:
+Here an easy example of setting up a variable for the baseURL used on a `DELETE` HTTP request:
 
 ```javascript
 @baseUrl = https://jsonplaceholder.typicode.com
@@ -106,7 +106,7 @@ Great thing is that, no matter where you defined your file variables, they can b
 
 ## Why am I choosing REST Client
 
-It's always good to have options. However, the main selling point for me was that REST Client does have the upper hand over Postman given that requests are handily available at the root directory of your projects and can be distributed to everyone in the development team. This makes it easy to test your HTTP requests and ensure that your application development is progressively being made the right way. So give it a try, below you will find a link to a Github repository with all of the example requests listed above. Download/Pull the repository, install REST Client and test it out.
+It's always good to have options. However, the main selling point for me was that REST Client does have the upper hand over Postman, given that requests are handily available at the root directory of your projects and can be distributed to everyone in the development team. This makes it easy to test your HTTP requests and ensure that your application development is progressively being made the right way. So give it a try, below you will find a link to a GitHub repository with all the example requests listed above. Download/Pull the repository, install REST Client and test it out.
 
 [understandingRESTClient](https://github.com/ekqt/understandingRESTClient)
 
