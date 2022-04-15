@@ -56,4 +56,69 @@ fetch(path)
 
 In the example above, we're using the simplest form of `fetch()` which takes one argument — the resource you want — and does not directly return the JSON (more on this term later) response body but instead returns a [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object representing the entire HTTP response. So to get the JSON response body content, you need to use the `json()` method, which returns the result of parsing the response body text as JSON. You can read more information, [here](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch), on Using the Fetch API.
 
-_Note: This article is a work in progress…_
+## How the Web Works
+
+Before we move any forward, let's explore some basic concepts on how the web works. What happens when you view a website from a web browser on your computer or phone.
+
+### What exactly happens? (An oversimplified story)
+
+When you type a web address into your browser:
+
+1. The browser goes to the [DNS](https://developer.mozilla.org/en-US/docs/Glossary/DNS) (Domain Name System) server, and finds the real address of the server (website's IP address) where the website lives on, then
+2. The browser sends an [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP) (Hypertext Transfer Protocol) request to the server, asking it to send the website back to the client(browser), then
+3. If the server successfully accepts the request, it will respond with a "[200 OK](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#successful_responses)" message and send back the website to the client, and finally
+4. The browser displays the website for you.
+
+### A small note on DNs
+
+Real web addresses aren't the nice memorable strings you type into your address bar to find your favorite websites. They are special numbers that look like this: `63.245.215.20`. These are called [IP addressess](https://developer.mozilla.org/en-US/docs/Glossary/IP_Address) and they represent a unique location on the web. DNS servers translates human-friendly domains (such as mozilla.org) to numeric IP addressess (such as 151.106.5.172).
+
+Technically speaking, websites could be reached directly via their IP addressess. You can try this by replicating a DNS request using a tool like [IP Checker](https://ipinfo.info/html/ip_checker.php).
+
+### What is Hypertext Transfer Protocol (HTTP)?
+
+HTTP is a protocol for fetching resources, such as HTML. It was designed for communication between web browsers and web servers following a [stateless](https://en.wikipedia.org/wiki/Stateless_protocol) and simple [client-server model](https://en.wikipedia.org/wiki/Client%E2%80%93server_model).
+
+### Let's make a simple HTTP Request
+
+Send an HTTP message: let's try inspecting what's happening behind the scenes with NASA's [APOD API](https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY). To make this request on the Browser: 1) Open a new Tab, 2) Open the DevTools from your Browser and then view the Network requests, and 3) visit the URL.
+
+```yaml
+/** Request Headers*/
+GET /planetary/apod?api_key=DEMO_KEY HTTP/1.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Host: api.nasa.gov
+```
+
+View the response sent by the server
+
+```yaml
+/** Response Headers*/
+HTTP/1.1 200 OK
+Date: <date>
+Content-Type: application/json
+
+/** Response Body*/
+{...}
+```
+
+We can replicate the request above using an API platform tool like [Postman](https://www.postman.com/product/what-is-postman/): 1) Go to [Postman's web application](https://web.postman.co/), 2) use your credentials to create an account or log in and create a Basic HTTP Request and 3) Send a `GET` request with the APOD API's URL [https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY](https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY).
+
+### Identifying Resources on the Web
+
+The target of an HTTP request is called a "resource" (a document, a photo, anything else). Each resource is identified by a [Uniform Resource Identifier (URI)](https://developer.mozilla.org/en-US/docs/Glossary/URI) (URLs are the most common form of URIs known as web addressess) used throughout HTTP for identifying resources. Let's take a look at some examples of URLs.
+
+```yaml
+https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
+https://apod.nasa.gov/apod/image/2204/DevilsWay_Kiczenski_960.jpg
+```
+
+[Here](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL#basics_anatomy_of_a_url) you can find more information on the anatomy of a URL.
+
+## Representational State Transfer (REST)
+
+REST is an architectural style that guides the design and development of processes to interact with resources on the web. An API that complies with most or all of the [guiding constraints](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm) of REST is considered to be a _RESTful API_ for a more comprehensive guideline refer [here](https://github.com/byrondover/api-guidelines/blob/master/Guidelines.md).
+
+REST uses all the advantages of the HTTP like [request verbs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods), [URI](https://developer.mozilla.org/en-US/docs/Web/HTTP/Resources_and_URIs), [media-types](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types), [caching](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching) etc. Since REST services works like a normal website they are easy to create and consume compared to other styles of web services.
+
+_This article is a work in progress..._

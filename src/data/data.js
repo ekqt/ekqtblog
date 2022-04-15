@@ -14,6 +14,7 @@ import whatIsDesign from "./what-is-design.md";
 import howIDeployMyProjectsIn2022 from "./how-i-deploy-my-projects-in-2022.md";
 import performancePitfallsDOMContentLoaded from "./performance-pitfalls-DOMContentLoaded.md";
 import introductionToApis from "./introduction-to-apis.md";
+import understandingColorThemes from "./understanding-color-themes.md";
 
 const posts = [];
 
@@ -87,6 +88,11 @@ posts.unshift({
   date: "Apr 12, 2022",
   data: introductionToApis,
   tag: "Software"
+});
+posts.unshift({
+  date: "Apr 14, 2022",
+  data: understandingColorThemes,
+  tag: "Design"
 });
 
 export default posts;
